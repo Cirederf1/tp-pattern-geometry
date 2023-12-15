@@ -42,6 +42,11 @@ public class LineStringTest {
         assertTrue(c.getNumPoints()==2);
         assertEquals("LineString", c.getType());
         assertFalse(c.isEmpty());
+        
+        c.translate(2.0, 2.0);
+        assertEquals("[7.0,4.0]", c.getPointN(0).getCoordinate().toString());
+        assertEquals("[3.0,4.0]", c.getPointN(1).getCoordinate().toString());
+
 
 
 	}

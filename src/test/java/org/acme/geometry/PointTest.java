@@ -26,10 +26,13 @@ public class PointTest {
 		Coordinate x = new Coordinate (1.0, 2.0);
 		Point a = new Point(x);
 		
-		
 		assertEquals("[1.0,2.0]", a.getCoordinate().toString());
         assertEquals("Point", a.getType());
         assertFalse(a.isEmpty());
+        
+        a.translate(2.0, 2.0);
+		assertEquals("[3.0,4.0]", a.getCoordinate().toString());
+
 
 	}
 }

@@ -1,17 +1,17 @@
 package org.acme.geometry;
 
-public class Point implements Geometry{
-	
+public class Point implements Geometry {
+
 	private Coordinate coordinate;
-	
+
 	public Point() {
 		this.coordinate = new Coordinate();
 	}
-	
+
 	public Point(Coordinate coordinate) {
-		if (coordinate!=null) {
+		if (coordinate != null) {
 			this.coordinate = coordinate;
-		}else {
+		} else {
 			this.coordinate = new Coordinate();
 		}
 	}
@@ -24,9 +24,16 @@ public class Point implements Geometry{
 	public String getType() {
 		return "Point";
 	}
-	
+
 	@Override
 	public boolean isEmpty() {
 		return this.coordinate.isEmpty();
+	}
+
+	@Override
+	public void translate(double dx, double dy) {
+		if (!this.isEmpty()) {
+			this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
+		}
 	}
 }
