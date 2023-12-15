@@ -35,6 +35,10 @@ public class LineStringTest {
 		points.add(b);
 		
 		LineString c = new LineString(points);
+		LineString clone = c.clone();
+		
+        assertFalse(c==clone);
+		
         assertEquals(2, c.getNumPoints(), EPSILON);
         assertEquals(5.0, c.getPointN(0).getCoordinate().getX(), EPSILON);
         assertEquals(2.0, c.getPointN(0).getCoordinate().getY(), EPSILON);
@@ -44,10 +48,12 @@ public class LineStringTest {
         assertFalse(c.isEmpty());
         
         c.translate(2.0, 2.0);
+        
         assertEquals("[7.0,4.0]", c.getPointN(0).getCoordinate().toString());
         assertEquals("[3.0,4.0]", c.getPointN(1).getCoordinate().toString());
 
-
+        assertEquals("[5.0,2.0]", clone.getPointN(0).getCoordinate().toString());
+        assertEquals("[1.0,2.0]", clone.getPointN(1).getCoordinate().toString());
 
 	}
 	
