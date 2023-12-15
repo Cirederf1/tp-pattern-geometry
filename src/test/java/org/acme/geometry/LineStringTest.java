@@ -16,9 +16,13 @@ public class LineStringTest {
 		LineString a = new LineString();
         assertTrue(a.getNumPoints()==0);
         assertTrue(a.isEmpty());
+        assertTrue(a.getEnvelope().isEmpty());
+        assertEquals("NaN,NaN,NaN,NaN", a.getEnvelope().toString());
         
         LineString b = new LineString(null);
-        assertTrue(a.isEmpty());
+        assertTrue(b.isEmpty());
+        assertTrue(b.getEnvelope().isEmpty());
+
 
 	}
 	
@@ -54,6 +58,10 @@ public class LineStringTest {
 
         assertEquals("[5.0,2.0]", clone.getPointN(0).getCoordinate().toString());
         assertEquals("[1.0,2.0]", clone.getPointN(1).getCoordinate().toString());
+
+        assertEquals("3.0,4.0,7.0,4.0", c.getEnvelope().toString());
+        assertEquals("1.0,2.0,5.0,2.0", clone.getEnvelope().toString());
+
 
 	}
 	

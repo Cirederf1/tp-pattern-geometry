@@ -36,11 +36,23 @@ public class Point implements Geometry {
 			this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
 		}
 	}
-	
+
 	@Override
 	public Point clone() {
 		Coordinate clone_coord = new Coordinate(this.coordinate.getX(), this.coordinate.getY());
 		Point clone = new Point(clone_coord);
 		return clone;
+	}
+
+	@Override
+	public Envelope getEnvelope() {
+		if (this.isEmpty()) {
+			return new Envelope();
+		} else {
+			EnvelopeBuilder builder = new EnvelopeBuilder();
+			builder.insert(this.coordinate);
+			Envelope result = builder.build();
+			return result;
+		}
 	}
 }

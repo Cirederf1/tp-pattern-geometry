@@ -17,9 +17,11 @@ public class EnvelopeBuilder {
 
 	public Envelope build() {
 
-		if (!coordinates.isEmpty()) {
+		if (coordinates.isEmpty()) {
+			return new Envelope();
+		} else {
 			double xMin, yMin, xMax, yMax;
-			
+
 			xMin = coordinates.get(0).getX();
 			yMin = coordinates.get(0).getY();
 			xMax = coordinates.get(0).getX();
@@ -43,8 +45,6 @@ public class EnvelopeBuilder {
 			Coordinate topRight = new Coordinate(xMax, yMax);
 
 			return new Envelope(bottomLeft, topRight);
-		} else {
-			return new Envelope();
 		}
 	}
 }

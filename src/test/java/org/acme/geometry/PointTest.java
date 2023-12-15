@@ -17,6 +17,9 @@ public class PointTest {
         
         Point b = new Point(null);
         assertTrue(b.isEmpty());
+        
+        assertTrue(a.getEnvelope().isEmpty());
+        assertEquals("NaN,NaN,NaN,NaN", a.getEnvelope().toString());
 
 	}
 	
@@ -38,7 +41,7 @@ public class PointTest {
 		assertEquals("[3.0,4.0]", a.getCoordinate().toString());
 		assertEquals("[1.0,2.0]", clone.getCoordinate().toString());
 
-
-
+        assertFalse(a.getEnvelope().isEmpty());
+        assertEquals(3.0, a.getEnvelope().getXmax(),EPSILON);
 	}
 }
