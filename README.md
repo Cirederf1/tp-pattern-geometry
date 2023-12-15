@@ -14,6 +14,7 @@ Projet de démarrage pour le [TP - Mise en oeuvre des patterns sur des Geometry]
 
 ```bash
 mvn clean package jacoco:report
+
 ```
 
 (ouvrir `target/site/jacoco/index.html` pour visualiser le rapport de couverture)

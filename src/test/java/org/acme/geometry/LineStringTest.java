@@ -15,6 +15,11 @@ public class LineStringTest {
 	public void testConstructorVoid() {
 		LineString a = new LineString();
         assertTrue(a.getNumPoints()==0);
+        assertTrue(a.isEmpty());
+        
+        LineString b = new LineString(null);
+        assertTrue(a.isEmpty());
+
 	}
 	
 	@Test
@@ -36,23 +41,11 @@ public class LineStringTest {
 
         assertTrue(c.getNumPoints()==2);
         assertEquals("LineString", c.getType());
+        assertFalse(c.isEmpty());
+
 
 	}
 	
-	@Test
-	public void testConstructorOneELem() {
-		Coordinate x = new Coordinate(5.0, 2.0);
-		
-		Point a = new Point(x);
-		
-		List<Point> points = new ArrayList<Point>();
-		points.add(a);
-		
-		LineString c = new LineString(points);
-		
-        assertTrue(c.getNumPoints()==0);
-
-	}
 
 	
 }

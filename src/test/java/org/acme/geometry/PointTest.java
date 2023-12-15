@@ -13,6 +13,23 @@ public class PointTest {
 		Point a = new Point();
         assertTrue(a.getCoordinate().isEmpty());
         assertEquals("Point", a.getType());
+        assertTrue(a.isEmpty());
+        
+        Point b = new Point(null);
+        assertTrue(b.isEmpty());
+
+
+	}
+	
+	@Test
+	public void testConstructor() {
+		Coordinate x = new Coordinate (1.0, 2.0);
+		Point a = new Point(x);
+		
+		
+		assertEquals("[1.0,2.0]", a.getCoordinate().toString());
+        assertEquals("Point", a.getType());
+        assertFalse(a.isEmpty());
 
 	}
 }
