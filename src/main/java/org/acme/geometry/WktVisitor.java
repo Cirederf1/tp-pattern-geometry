@@ -38,6 +38,7 @@ public class WktVisitor implements GeometryVisitor {
 							+ lineString.getPointN(index).getCoordinate().getY());
 				}
 			}
+			buffer.append(")");
 		}
 	}
 }
