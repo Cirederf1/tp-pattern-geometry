@@ -3,7 +3,9 @@ package org.acme.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineString implements Geometry {
+import org.w3c.dom.views.AbstractView;
+
+public class LineString extends AbstractGeometry {
 
 	private List<Point> points;
 

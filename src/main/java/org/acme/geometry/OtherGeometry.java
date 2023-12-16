@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class OtherGeometry implements Geometry{
+public class OtherGeometry extends AbstractGeometry{
 
 	@Override
 	public String getType() {

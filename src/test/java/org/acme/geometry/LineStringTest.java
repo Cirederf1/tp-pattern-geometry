@@ -62,7 +62,7 @@ public class LineStringTest {
         assertEquals("3.0,4.0,7.0,4.0", c.getEnvelope().toString());
         assertEquals("1.0,2.0,5.0,2.0", clone.getEnvelope().toString());
 
-
+        
 	}
 	
 
