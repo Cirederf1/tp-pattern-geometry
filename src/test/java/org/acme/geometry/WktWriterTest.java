@@ -40,6 +40,21 @@ public class WktWriterTest {
 		
 		
 	}
+	
+	@Test
+	public void testWriterOtherGeom(){
+		Geometry g = new OtherGeometry();
+		WktWriter writer = new WktWriter();
+        try {
+            // Essayez d'écrire une géométrie non prise en charge
+            writer.write(g);
+            // Si aucune exception n'est levée, le test échoue
+            fail("Aucune exception n'a été levée pour la géométrie non prise en charge");
+        } catch (RuntimeException e) {
+            // Si une exception est levée, vérifiez le message d'erreur
+            assertEquals("geometry type not supported", e.getMessage());
+        }
+	}
 
 
 }

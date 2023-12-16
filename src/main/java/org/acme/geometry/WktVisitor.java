@@ -41,4 +41,10 @@ public class WktVisitor implements GeometryVisitor {
 			buffer.append(")");
 		}
 	}
+	
+	@Override
+	public void visit(OtherGeometry otherGeometry) {
+		
+	}
+	
 }
