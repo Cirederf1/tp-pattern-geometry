@@ -26,11 +26,11 @@ public class OtherGeometry extends AbstractGeometry{
 		return null;
 	}
 
-	@Override
-	public Envelope getEnvelope() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Envelope getEnvelope() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public void accept(GeometryVisitor visitor) {

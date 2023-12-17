@@ -68,8 +68,6 @@ public class EnvelopeTest {
         
         Envelope result2 = builder.build();
         assertEquals("1.0,0.5,7.0,3.0", result2.toString());
-
-
 	}
 
 }

@@ -60,19 +60,19 @@ public class LineString extends AbstractGeometry {
 		return clone;
 	}
 	
-	@Override
-	public Envelope getEnvelope() {
-		if(this.isEmpty()) {
-			return new Envelope();
-		}else {
-			EnvelopeBuilder builder = new EnvelopeBuilder();
-			for (Point point: this.points) {
-				builder.insert(point.getCoordinate());
-			}
-			Envelope result = builder.build();
-			return result;
-		}
-	}
+//	@Override
+//	public Envelope getEnvelope() {
+//		if(this.isEmpty()) {
+//			return new Envelope();
+//		}else {
+//			EnvelopeBuilder builder = new EnvelopeBuilder();
+//			for (Point point: this.points) {
+//				builder.insert(point.getCoordinate());
+//			}
+//			Envelope result = builder.build();
+//			return result;
+//		}
+//	}
 	
 	@Override
 	public void accept(GeometryVisitor visitor) {

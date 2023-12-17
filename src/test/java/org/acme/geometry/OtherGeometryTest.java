@@ -34,7 +34,7 @@ public class OtherGeometryTest {
     @Test
     public void testGetEnvelope() {
         OtherGeometry geometry = new OtherGeometry();
-        assertNull(geometry.getEnvelope());
+        assertEquals("NaN,NaN,NaN,NaN",geometry.getEnvelope().toString());
        
     }
 

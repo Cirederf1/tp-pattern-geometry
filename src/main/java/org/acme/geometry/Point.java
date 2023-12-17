@@ -44,17 +44,17 @@ public class Point extends AbstractGeometry {
 		return clone;
 	}
 
-	@Override
-	public Envelope getEnvelope() {
-		if (this.isEmpty()) {
-			return new Envelope();
-		} else {
-			EnvelopeBuilder builder = new EnvelopeBuilder();
-			builder.insert(this.coordinate);
-			Envelope result = builder.build();
-			return result;
-		}
-	}
+//	@Override
+//	public Envelope getEnvelope() {
+//		if (this.isEmpty()) {
+//			return new Envelope();
+//		} else {
+//			EnvelopeBuilder builder = new EnvelopeBuilder();
+//			builder.insert(this.coordinate);
+//			Envelope result = builder.build();
+//			return result;
+//		}
+//	}
 	
 	@Override
 	public void accept(GeometryVisitor visitor) {
