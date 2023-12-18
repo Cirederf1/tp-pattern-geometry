@@ -50,17 +50,17 @@ public class EnvelopeBuilder implements GeometryVisitor {
 
 	@Override
 	public void visit(Point point) {
-		if(!point.isEmpty()) {
+		if (!point.isEmpty()) {
 			insert(point.getCoordinate());
 		}
 	}
 
 	@Override
 	public void visit(LineString lineString) {
-		if(!lineString.isEmpty()){
-		    for (int index=0; index<lineString.getNumPoints();index++) {
-		        insert(lineString.getPointN(index).getCoordinate());
-		    }
+		if (!lineString.isEmpty()) {
+			for (int index = 0; index < lineString.getNumPoints(); index++) {
+				insert(lineString.getPointN(index).getCoordinate());
+			}
 		}
 	}
 

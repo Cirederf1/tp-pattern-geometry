@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class GeometryWithCachedEnvelope implements Geometry {
+public class GeometryWithCachedEnvelope implements Geometry, GeometryListener {
 
 	private Geometry original;
 
@@ -55,6 +55,12 @@ public class GeometryWithCachedEnvelope implements Geometry {
 		if (original != null) {
 			original.accept(visitor);
 		}
+	}
+
+	@Override
+	public void onChange(Geometry geometry) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
